@@ -5,6 +5,10 @@ import { Input } from "@/components/ui/input"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { useState, useEffect } from "react"
 import { FormData } from "@/lib/validateSchemas"
+import {
+    RadioGroup,
+    RadioGroupItem,
+} from "@/components/ui/radio-group"
 
 interface JobDetailsStepProps {
     form: UseFormReturn<FormData>
@@ -132,30 +136,45 @@ export function JobDetailsStep({ form }: JobDetailsStepProps) {
                 />
 
                 {/* Job Type */}
+
                 <FormField
                     control={form.control}
                     name="jobType"
                     render={({ field }) => (
-                        <FormItem>
-                            <FormLabel>Job Type *</FormLabel>
-                            <Select
-                                onValueChange={(value) => {
-                                    field.onChange(value)
-                                    form.setValue("salary", "")
-                                }}
-                                value={field.value}
-                            >
-                                <FormControl>
-                                    <SelectTrigger className="w-full">
-                                        <SelectValue />
-                                    </SelectTrigger>
-                                </FormControl>
-                                <SelectContent>
-                                    <SelectItem value="full-time">Full-time</SelectItem>
-                                    <SelectItem value="part-time">Part-time</SelectItem>
-                                    <SelectItem value="contract">Contract</SelectItem>
-                                </SelectContent>
-                            </Select>
+                        <FormItem className="space-y-3">
+                            <FormLabel>Job Type
+                                <span className="text-red-500">*</span>
+                            </FormLabel>
+                            <FormControl>
+                                <RadioGroup
+                                    onValueChange={field.onChange}
+                                    defaultValue={field.value}
+                                    className="flex flex-col"
+                                >
+                                    <FormItem className="flex items-center gap-3">
+                                        <FormControl>
+                                            <RadioGroupItem value="full-time" />
+                                        </FormControl>
+                                        <FormLabel className="font-normal">
+                                            Full Time
+                                        </FormLabel>
+                                    </FormItem>
+                                    <FormItem className="flex items-center gap-3">
+                                        <FormControl>
+                                            <RadioGroupItem value="part-time" />
+                                        </FormControl>
+                                        <FormLabel className="font-normal">
+                                            Part Time
+                                        </FormLabel>
+                                    </FormItem>
+                                    <FormItem className="flex items-center gap-3">
+                                        <FormControl>
+                                            <RadioGroupItem value="contract" />
+                                        </FormControl>
+                                        <FormLabel className="font-normal">Contract</FormLabel>
+                                    </FormItem>
+                                </RadioGroup>
+                            </FormControl>
                             <FormMessage />
                         </FormItem>
                     )}
@@ -182,7 +201,7 @@ export function JobDetailsStep({ form }: JobDetailsStepProps) {
                     name="manager"
                     render={({ field }) => (
                         <FormItem>
-                            <FormLabel>Manager *</FormLabel>
+                            <FormLabel>Manager  <span className="text-red-500">*</span></FormLabel>
                             <Select
                                 onValueChange={field.onChange}
                                 value={field.value}

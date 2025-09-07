@@ -10,6 +10,7 @@ interface EmergencyContactStepProps {
 }
 
 export function EmergencyContactStep({ form }: EmergencyContactStepProps) {
+
     const calculateAge = (dateOfBirth: string): number => {
         if (!dateOfBirth) return 0
         const today = new Date()
@@ -91,7 +92,7 @@ export function EmergencyContactStep({ form }: EmergencyContactStepProps) {
                             name="guardianContact.name"
                             render={({ field }) => (
                                 <FormItem>
-                                    <FormLabel>Guardian Name *</FormLabel>
+                                    <FormLabel>Guardian Name</FormLabel>
                                     <FormControl>
                                         <Input placeholder="Guardian name" {...field} />
                                     </FormControl>
@@ -105,7 +106,7 @@ export function EmergencyContactStep({ form }: EmergencyContactStepProps) {
                             name="guardianContact.phone"
                             render={({ field }) => (
                                 <FormItem>
-                                    <FormLabel>Guardian Phone *</FormLabel>
+                                    <FormLabel>Guardian Phone </FormLabel>
                                     <FormControl>
                                         <Input placeholder="Guardian phone number" {...field} />
                                     </FormControl>

@@ -204,12 +204,12 @@ export function EmployeeOnboardingForm() {
                     </Card>
 
                     <div className="flex justify-between mt-6">
-                        <Button type="button" variant="outline" onClick={handlePrevious} disabled={currentStep === 1}>
+                        <Button type="button" variant="outline" className="cursor-pointer" onClick={handlePrevious} disabled={currentStep === 1}>
                             Previous
                         </Button>
 
                         {currentStep < 5 ? (
-                            <Button type="button" onClick={handleNext}>
+                            <Button type="button" onClick={handleNext} className="cursor-pointer" >
                                 Next
                             </Button>
                         ) : (

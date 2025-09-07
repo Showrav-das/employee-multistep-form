@@ -143,7 +143,7 @@ export function SkillsPreferencesStep({ form }: SkillsPreferencesStepProps) {
                 name="skills"
                 render={() => (
                     <FormItem>
-                        <FormLabel>Skills * (Select at least 3)</FormLabel>
+                        <FormLabel>Skills  <span className="text-red-500">*</span> (Select at least 3)</FormLabel>
                         <div className="space-y-4">
                             <p className="text-sm text-muted-foreground">
                                 {department

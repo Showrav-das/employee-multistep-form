@@ -67,7 +67,7 @@ export function PersonalInfoStep({ form }: PersonalInfoStepProps) {
                     name="fullName"
                     render={({ field }) => (
                         <FormItem>
-                            <FormLabel>Full Name *</FormLabel>
+                            <FormLabel>Full Name  <span className="text-red-500">*</span></FormLabel>
                             <FormControl>
                                 <Input placeholder="First Last" {...field} />
                             </FormControl>
@@ -81,7 +81,7 @@ export function PersonalInfoStep({ form }: PersonalInfoStepProps) {
                     name="email"
                     render={({ field }) => (
                         <FormItem>
-                            <FormLabel>Email *</FormLabel>
+                            <FormLabel>Email  <span className="text-red-500">*</span></FormLabel>
                             <FormControl>
                                 <Input type="email" placeholder="john@example.com" {...field} />
                             </FormControl>
@@ -95,7 +95,7 @@ export function PersonalInfoStep({ form }: PersonalInfoStepProps) {
                     name="phone"
                     render={({ field }) => (
                         <FormItem>
-                            <FormLabel>Phone *</FormLabel>
+                            <FormLabel>Phone <span className="text-red-500">*</span></FormLabel>
                             <FormControl>
                                 <Input
                                     placeholder="+1-123-456-7890"
@@ -116,7 +116,7 @@ export function PersonalInfoStep({ form }: PersonalInfoStepProps) {
                     name="dateOfBirth"
                     render={({ field }) => (
                         <FormItem>
-                            <FormLabel>Date of Birth *</FormLabel>
+                            <FormLabel>Date of Birth  <span className="text-red-500">*</span></FormLabel>
                             <FormControl>
                                 <Input type="date" {...field} />
                             </FormControl>
